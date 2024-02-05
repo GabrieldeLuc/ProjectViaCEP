@@ -1,0 +1,16 @@
+{
+
+"cep" : [
+    {
+        "id" : "cksd", 
+        "logradouro" : "Rua fulano de tal" ,
+        "bairro" : "bairro",
+        "localidade" : "Cidade do fulano",
+        "estado" : "São Paulo", 
+        "UF" : "SP"
+
+    }
+]
+
+
+}
