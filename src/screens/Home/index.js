@@ -1,7 +1,8 @@
 import { View } from "react-native";
 import { BoxInput } from "../../components/BoxInput";
 import { ContainerForm, ContainerInput, ScrollForm } from "./style";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export function Home() {
     // states - variáveis 
@@ -13,6 +14,38 @@ export function Home() {
     const [uf, setUF] = useState('')
 
     // useEffect - funções 
+
+useEffect(() => {},
+
+async function buscarCEP() {
+    
+try {
+    
+if (cep != '' && cep.length === 8 ) {
+    const dados =  await axios.get(`https://brasilaberto.com/api/v1/zipcode/${cep}`)
+}
+
+if (dados.error) {
+    return; 
+}
+
+setLogradouro(dados.dados.result.street); 
+setBairro(dados.data.result.district); 
+setCidade(dados.data.result.city)
+setEstado(dados.data.result.state)
+setUF(dados.data.result.stateShortname)
+
+} catch (error) {
+    console.log('Erro ao Buscar Cep');
+}
+
+buscarCEP(); 
+
+}
+
+[cep]); 
+
+
     return (
 
         <>
